@@ -24,7 +24,6 @@ The two applications communicate over **TCP on port `6164`**. In the current sou
 - [Build and run](#build-and-run)
 - [How to use](#how-to-use)
 - [Important implementation notes](#important-implementation-notes)
-- [Possible future improvements](#possible-future-improvements)
 
 ---
 
@@ -415,25 +414,4 @@ These notes describe the supplied source code, rather than assumptions about int
 - The TCP receiver reads available data and then processes it as one XML document. The current protocol does not define a separate message-length header or a framing delimiter. For larger payloads or unreliable network conditions, a more explicit framing strategy and buffered reads would be a useful improvement.
 - The client displays a success dialog from its socket's `disconnected` signal. For production-grade delivery confirmation, the server should send an application-level acknowledgement after successful parsing rather than relying only on the TCP connection closing.
 
----
 
-## Possible future improvements
-
-The following are suggestions, not features currently implemented:
-
-- Add configurable server host and port settings so the client can connect to another computer.
-- Add a server acknowledgement message so the client can distinguish successful parsing from a successful TCP write.
-- Introduce robust TCP message framing and buffered receive logic.
-- Support multiple simultaneous clients with a socket collection rather than a single active socket pointer.
-- Validate numeric fields, dimensions, required XML elements and duplicate container codes.
-- Persist complete pallet assignments as well as unallocated containers.
-- Allow the user to choose the backup file location and use a versioned, structured backup format.
-- Add automated unit tests for volume calculations, code generation, backup/restore, XML serialization and XML parsing.
-- Consider smart pointers and clearer ownership rules to reduce manual memory management.
-- Add a formal XML schema or documented protocol version to make client/server compatibility easier to maintain.
-
----
-
-## License
-
-No license file was included in the supplied project archive. Add a `LICENSE` file before redistributing the project if you want to specify terms for reuse.
