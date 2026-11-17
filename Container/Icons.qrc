@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>backup.png</file>
+        <file>exit.png</file>
+        <file>help.png</file>
+        <file>info.png</file>
+        <file>restore.png</file>
+        <file>xml.png</file>
+        <file>container.png</file>
+        <file>aboutIcon.png</file>
+        <file>splashFinalState.png</file>
+        <file>splashFirstState.png</file>
+        <file>splashMiddleState.png</file>
+    </qresource>
+</RCC>
